@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<style>
+
+    form 
+    {
+        margin: auto;
+        background-color:blue;
+    }
+    @keyframes example 
+    {
+        0%   {background-color:black;}
+        25%  {background-color:darkslateblue;}
+        50%  {background-color:deepskyblue}
+        100% {background-color:black;}
+        125% {background-color:gray;}
+        150% {background-color:yellow;}
+        175% {background-color:electric-purple;}
+        200% {background-color:Charcoal grey;}
+        
+    }
+    .result
+    {
+        text-align: center;
+        color:white;
+        background-color: Brown;
+        font-family: 'Times New Roman', Times, serif;
+        
+    }
+    .header 
+      {
+        padding: 10px;
+        text-align: center;
+        color:white;
+        background-color: black;
+        font-family: 'Times New Roman', Times, serif;
+        animation-name: example;
+        animation-duration: 15s;
+        animation-iteration-count: 100;
+      }
+
+    label
+    {
+        color: aliceblue;
+        font-size: 20px;
+    }
+
+    input
+    {
+        border-radius: 10px;
+        width: 200px;
+        height: 25px;
+    }
+    .block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #04AA6D;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+</style>
+
+<head>
+    <title>House Prediction Website</title>
+</head>
+<body>
+
+<div class= "header">
+    <h1>House Prices Prediction of Pakistan
+    <img class="object-cover object-center rounded" src="https://source.unsplash.com/1200x400/?houses"></h1>
+</div>
+
+
+<form action="{{ url_for('main') }}" method="POST">
+    <br><br><br>
+        <b><i><label>&nbsp;&nbsp;&nbsp;&nbsp;Please Enter Property Type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <select name="property_type" id="property_type" style="width: 200px;">
+    <optgroup label="House">
+      <option value="1">1</option>
+    </optgroup>
+    <optgroup label="Flat">
+      <option value="2">2</option>
+    </optgroup>
+    <optgroup label="Banglow">
+      <option value="3">3</option>
+    </optgroup>
+    <optgroup label="Villas">
+      <option value="4">4</option>
+    </optgroup>
+    <optgroup label="Commercial">
+      <option value="5">5</option>
+    </optgroup>
+    <optgroup label="Industrial">
+      <option value="6">6</option>
+    </optgroup>
+      <optgroup label="Warehouse">
+      <option value="7">7</option>
+    </optgroup>
+      <optgroup label="Vacation Homes">
+      <option value="8">8</option>
+    </optgroup>
+     <optgroup label="Apartments Buildings">
+      <option value="9">9</option>
+    </optgroup>
+      <optgroup label="Mixed-Use Properties">
+      <option value="10">10</option>
+    </optgroup>
+    
+    
+  </select>
+         
+</label>
+         
+      
+        <br></br>
+        
+        <label>&nbsp;&nbsp;&nbsp;&nbsp;Please Enter City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <select name="city" id="city" style="width: 200px;">
+          <optgroup label="Islamabad">
+         <option value="1">1</option>
+         </optgroup>
+         <optgroup label="Lahore">
+         <option value="2">2</option>
+        </optgroup>
+        <optgroup label="Karachi">
+        <option value="3">3</option>
+        </optgroup>
+        <optgroup label="Haripur">
+        <option value="4">4</option>
+        </optgroup>
+        <optgroup label="Manshera">
+        <option value="5">5</option>
+        </optgroup>
+        <optgroup label="Abbottabad">
+        <option value="6">6</option>
+        </optgroup>
+        <optgroup label="Rawalpindi">
+        <option value="7">7</option>
+        </optgroup>
+        <optgroup label="Peshawer">
+        <option value="8">8</option>
+        </optgroup>
+        <optgroup label="Mardan">
+        <option value="9">9</option>
+        </optgroup>
+        <optgroup label="Faisalabad">
+        <option value="10">10</option>
+        </optgroup>
+        <optgroup label="Sialkot">
+        <option value="11">11</option>
+        </optgroup>
+        <optgroup label="Multan">
+        <option value="12">12</option>
+        </optgroup>
+        <optgroup label="Quetta">
+        <option value="13">13</option>
+        </optgroup>
+        <optgroup label="Sukkur">
+        <option value="14">14</option>
+        </optgroup>
+        <optgroup label="Okara">
+        <option value="15">15</option>
+        </optgroup>
+         <optgroup label="Dera Ghazi Khan">
+        <option value="16">16</option>
+        </optgroup>
+        <optgroup label="Gujranwala">
+        <option value="17">17</option>
+        </optgroup>
+        <optgroup label="Hyderabad">
+        <option value="18">18</option>
+        </optgroup>
+       <optgroup label="Nowshera">
+        <option value="19">19</option>
+        </optgroup>
+        <optgroup label="Mianwali">
+        <option value="20">20</option>
+        </optgroup>
+         <optgroup label="Chichawatni">
+        <option value="21">21</option>
+        </optgroup>
+        <optgroup label="Chakwal">
+        <option value="22">22</option>
+        </optgroup>
+       <optgroup label="Bahawalnagar">
+        <option value="23">23</option>
+        </optgroup>
+         <optgroup label="Jhelum">
+        <option value="24">24</option>
+        </optgroup>
+         <optgroup label="Nawabshah">
+        <option value="25">25</option>
+        </optgroup>
+       <optgroup label="Khuzdar">
+        <option value="26">26</option>
+        </optgroup>
+       <optgroup label="Tando Adam">
+        <option value="27">27</option>
+        </optgroup>
+       <optgroup label="Sheikhupura">
+        <option value="28">28</option>
+        </optgroup>
+        <optgroup label="Larkana">
+        <option value="29">29</option>
+        </optgroup>
+       <optgroup label="Kasur">
+        <option value="30">30</option>
+        </optgroup>
+        <optgroup label="Gujrat">
+        <option value="31">31</option>
+        </optgroup>
+       <optgroup label="Sahiwal">
+        <option value="32">32</option>
+        </optgroup>
+         <optgroup label="Wah Cantonment">
+        <option value="33">33</option>
+        </optgroup>
+        <optgroup label="Jacobabad">
+        <option value="34">34</option>
+        </optgroup>
+        <optgroup label="Muzaffargarh">
+        <option value="35">35</option>
+        </optgroup>
+       <optgroup label="Khanpur">
+        <option value="36">36</option>
+        </optgroup>
+       <optgroup label="Dadu">
+        <option value="37">37</option>
+        </optgroup>
+        <optgroup label="Shikarpur">
+        <option value="38">38</option>
+        </optgroup>
+       <optgroup label="Khanewal">
+        <option value="39">39</option>
+        </optgroup>
+       <optgroup label="Tando Allahyar">
+        <option value="40">40</option>
+        </optgroup>
+  </select>
+</label>
+        
+        <br><br>
+        <label>&nbsp;&nbsp;&nbsp;&nbsp;Please Enter Province Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="province_name" id="province_name" style="width: 200px;">
+    <optgroup label="Kpk">
+      <option value="1">1</option>
+    </optgroup>
+    <optgroup label="Punjab">
+      <option value="2">2</option>
+    </optgroup>
+    <optgroup label="Balochistan">
+      <option value="3">3</option>
+    </optgroup>
+    <optgroup label="Sindh">
+      <option value="4">4</option>
+    </optgroup>
+  </select>
+        </label>
+  
+        <br><br>
+        
+        
+        <label>&nbsp;&nbsp;&nbsp;&nbsp;Please Enter Number of Baths&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp&nbsp;&nbsp;
+        </label>
+        <input name = "baths" type="Number" required>
+        <br><br>
+        <label>&nbsp;&nbsp;&nbsp;&nbsp;Please Enter the Number of Bedrooms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;
+        </label></b></i>
+        
+        <input name = "bedrooms" type="Number" required>
+        <div align = "center">
+        <input type="submit" style="height: 30px;width: 300px;margin-top: 50px;">
+       </div>
+        <br>
+        <br>
+        <br>
+    </div>
+    <br><br>
+    </form>
+
+<div class="result" >
+    <br><br>
+    {% if result %}
+    	{% for variable, value in original_input.items() %}
+    		<b>{{ variable }}</b> : {{ value }}
+    	{% endfor %}
+		<br>
+    	<br> Predicted Amount of House :
+        	
+   		<p style="font-size:50px" <i><b>RS: </b></i>{{ result }}</p>
+
+	{% endif %}
+
+    <button type="button" class="block">Contact with us</button> 
+</div>
+
+<b><i><footer>
+  	<div>
+    	<center><h2>Samiullah</h2>
+	<p><a href="mailto: uOhPakistan@gmail.com">uOhPakistan@gmail.com</a></p>
+	<h3>Main features</h3>
+  	<p>The main Feature of this web is prediction of houses values<br>
+        of Pakistan.This web is working on machine learning model.</p></center>
+   	
+        </div>
+  
+</footer></b></i>
+</body>
+</html>
